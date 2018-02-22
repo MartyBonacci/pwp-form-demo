@@ -29,10 +29,10 @@ try {
 	 * This assumes jQuery (NOT Angular!) will be AJAX submitting the form,
 	 * so we're using the $_POST superglobal.
 	 **/
-	$demoName = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-	$demoEmail = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-	$subject = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-	$message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+	$demoName = filter_input(INPUT_POST, "demoName", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+	$demoEmail = filter_input(INPUT_POST, "demoEmail", FILTER_SANITIZE_EMAIL);
+	$demoSubject = filter_input(INPUT_POST, "demoSubject", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+	$demoMessage = filter_input(INPUT_POST, "demoMexitessage", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
 	// create Swift message
 	$swiftMessage = new Swift_Message();
@@ -51,7 +51,7 @@ try {
 	$swiftMessage->setTo($recipients);
 
 	// attach the subject line to the message
-	$swiftMessage->setSubject($subject);
+	$swiftMessage->setSubject($demoSubject);
 
 	/**
 	 * Attach the actual message to the message.
@@ -64,8 +64,8 @@ try {
 	 * this lets users who aren't viewing HTML content in Emails still access your
 	 * links.
 	 **/
-	$swiftMessage->setBody($message, "text/html");
-	$swiftMessage->addPart(html_entity_decode($message), "text/plain");
+	$swiftMessage->setBody($demoMessage, "text/html");
+	$swiftMessage->addPart(html_entity_decode($demoMessage), "text/plain");
 
 	/**
 	 * Send the Email via SMTP. The SMTP server here is configured to relay
