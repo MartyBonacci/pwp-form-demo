@@ -46,7 +46,7 @@
 					<div class="col-md-6">
 
 						<!-- BEGIN CONTACT FORM -->
-						<form id="demo-form" action="php/mailer.php" method="post">
+						<form id="my-contact-form" action="php/mailer.php" method="post">
 							<div class="form-group">
 								<label for="demoName">Name</label>
 								<div class="input-group">
@@ -83,7 +83,8 @@
 									<textarea name="demoMessage" rows="5" id="demoMessage" class="form-control" placeholder="Your Message (2000 charaters max)"></textarea>
 								</div>
 							</div>
-
+							<!-- reCAPTCHA -->
+							<div class="g-recaptcha" data-sitekey="6LfB-kcUAAAAAFcvfj0XiHqROZjZfptzFJl7itxu"></div>
 							<button class="btn btn-info" type="submit">Submit</button>
 							<button class="btn btn-default" type="reset">Reset</button>
 						</form>
