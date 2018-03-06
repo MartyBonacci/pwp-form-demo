@@ -32,7 +32,7 @@ try {
 	$demoName = filter_input(INPUT_POST, "demoName", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 	$demoEmail = filter_input(INPUT_POST, "demoEmail", FILTER_SANITIZE_EMAIL);
 	$demoSubject = filter_input(INPUT_POST, "demoSubject", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-	$demoMessage = filter_input(INPUT_POST, "demoMexitessage", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+	$demoMessage = filter_input(INPUT_POST, "demoMessage", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 
 	// create Swift message
 	$swiftMessage = new Swift_Message();
